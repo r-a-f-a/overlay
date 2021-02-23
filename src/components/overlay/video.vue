@@ -11,8 +11,10 @@ export default {
   props:['params'],
   mounted() {
     var aud = document.getElementById("overlay-video");
+    let _this = this
     aud.onended = function() {
-        console.log("VOLTAR PARA O COMP VIA EVENTO");
+      _this.$events.emit('setBlank')
+        // console.log("VOLTAR PARA O COMP VIA EVENTO");
     };
     // var transparentVideo = seeThru.create('#my-video');
     // transparentVideo.play()
